@@ -36,8 +36,8 @@
 			on the Immersive Display Preferences dialog box.
 		-->
 		<Scale value="1.0"/>
-		<Scale_2D value="0.5"/>
-		<Scale_3D value="0.4"/>
+		<Scale_2D value="0.2"/>
+		<Scale_3D value="0.8"/>
 		<Cursor_2D_Jitter_Tolerance value=""/>
 		<Cursor_Mode_2D toggle="off">
 			<Rotate toggle="off"/>
@@ -53,23 +53,24 @@
 			<Rotate toggle="on"/>
 			<Pan_and_Zoom toggle="on"/>
 			<Immersive_Fly toggle="on"/>
-			<Immersive_Drive toggle="off"/>
+			<Immersive_Drive toggle="on"/>
 			<Offset_X value="0.0"/>
 			<Offset_Y value="0.0"/>
-			<Offset_Z value="-1.0"/>
+			<Offset_Z value="0.0"/>
+			<Rotate_Around_Cursor_Origin toggle="on"/>
 		</Cursor_Mode_3D>
 		<Button_Function_Mapping>
-			<Toggle_Immersive_Menu value="1"/>
-			<Decrease_Sensitivity value="2"/>
-			<Increase_Sensitivity value="3"/>
-			<Switch_Mode value="4"/>
+			<Toggle_Immersive_Menu value="4"/>
+			<Decrease_Sensitivity value="6"/>
+			<Increase_Sensitivity value="7"/>
+			<Switch_Mode value="1"/>
 			<Select value="5"/>
-			<Attach_Release value="6"/>
-			<Reset_Up_Vector value="7"/>
-			<Up value="8"/>
-			<Down value="9"/>
-			<Right value="10"/>
-			<Left value="11"/>
+			<Attach_Release value="2"/>
+			<Reset_Up_Vector value="3"/>
+			<Up value="11"/>
+			<Down value="10"/>
+			<Right value="9"/>
+			<Left value="8"/>
 		</Button_Function_Mapping>
 	</Controller>
 	<Functions>
@@ -79,7 +80,7 @@
 		-->
 		<Pre_Highlight toggle="on"/>
 		<Fixed_Laser_Beam_Length toggle="on"/>
-		<Laser_Beam_Length value="5.0"/>
+		<Laser_Beam_Length value="20.0"/>
 		<Navigation>
 			<Translation_Scale value="1.0"/>
 			<Rotation_Scale value="1.0"/>
@@ -94,7 +95,7 @@
 		<Scale_2D value="1.0"/>
 		<Scale_3D value="1.0"/>
 		<Display_Channel value=""/>
-		<Rotate_X_Degree value="45.0"/>
+		<Rotate_X_Degree value="0.0"/>
 		<Rotate_Y_Degree value="0.0"/>
 		<Rotate_Z_Degree value="0.0"/>
 	</Concept_Menu>
@@ -112,7 +113,7 @@
 				name = "InterSense"
 				name = "VRPN"
 		-->
-		<Auto_Activate name="TrackD"/>
+		<Auto_Activate name="VRPN"/>
 	</Sensors>
 	<Annotations>
 		<!--
@@ -125,22 +126,36 @@
 	<VRPN>
 		<!--
 			The section is used to set up VRPN parameters.
+			TcVis currently supports:
+				vrpn_Tracker_Remote
+				vrpn_Button_Remote
+				vrpn_Analog_Remote
+
+			Note: If only one server can support tracker, button and analog
+			devices, e.g. zSpace server, you can also use
+
+			<Server name="Tracker0@localhost"/>
+			<Number_Trackers value="2"/> 
+			<Number_Buttons value="3"/>
+			<Number_Analogs value="0"/>
 		-->
-		<Server name="Tracker0@localhost"/>
-		<Number_Devices value="1"/>
-		<Number_Trackers value="2"/> 
-		<Number_Buttons value="12"/>
-		<Number_Analogs value="2"/> 
-		<Analog_Data>
-			<Control_Cursor toggle="off"/>
-		</Analog_Data>
+		<Tracker_Server name="DTrack@metal-devices.vrac.iastate.edu">
+			<Number_Trackers value="2"/>
+			<Sensor_ID value="0"/>
+			<Sensor_ID value="1"/>
+		</Tracker_Server>
+		<Button_Server name="WhiteWiimote@metal-devices.vrac.iastate.edu">
+			<Number_Buttons value="12"/>
+		</Button_Server>
+		<Analog_Server name="">
+			<Number_Analogs value="0"/>
+		</Analog_Server>
 	</VRPN>
 	<VisVRController>
 		<!--
 			The section is used to set up VisVRController parameters.
 		-->
 		<Server name="localhost:9999"/>
-		<Number_Devices value="1"/>
 		<Number_Trackers value="2"/> 
 		<Number_Buttons value="12"/>
 		<Number_Analogs value="2"/> 

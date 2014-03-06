@@ -8,12 +8,12 @@ view CAVE
   units   feet
   designEyeOffset 0,0,0
 
-  display MiddleDisplay
+  display Display
   {
     pipe                 ""
     border               BORDER_OFF
     stereo               STEREO_ON
-    channel              MyMainChannel
+    channel              MiddleChannel
     {
       #                    WidthxHeight+Xoffset+Yoffset
       frameBufferGeometry  1600x1200+0+0
@@ -25,33 +25,21 @@ view CAVE
       #                    Left, Right, Top, Bottom, Distance
       physicalDimensions   -6.0, 6.0, 4.5, -4.5, 4.5
     }
-  }
 
-  display RightDisplay
-  {
-    pipe                 ""
-    border               BORDER_OFF
-    stereo               STEREO_ON
-    channel              MyMainChannel
+    channel              RightChannel
     {
       #                    WidthxHeight+Xoffset+Yoffset
-      frameBufferGeometry  1600x1200+1600+0
+      frameBufferGeometry  1200x1200+1800+0
       #                    WidthxHeight+Xoffset+Yoffset
-      virtualGeometry      400x300+200-150
+      virtualGeometry      300x300+200-150
       projectorRotation    0
       #                    yaw, pitch, roll
       viewRotation         90, 0, 0
       #                    Left, Right, Top, Bottom, Distance
-      physicalDimensions   -6.0, 6.0, 4.5, -4.5, 6.0
+      physicalDimensions   -4.5, 4.5, 4.5, -4.5, 6.0
     }
-  }
 
-  display BottomDisplay
-  {
-    pipe                 ""
-    border               BORDER_OFF
-    stereo               STEREO_ON
-    channel              MyMainChannel
+    channel              BottomChannel
     {
       #                    WidthxHeight+Xoffset+Yoffset
       frameBufferGeometry  1600x1200+3200+0
