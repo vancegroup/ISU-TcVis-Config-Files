@@ -33,7 +33,3 @@ While in immersive mode:
 
 If there is any question/bug report/suggestion, please contact
 Tsung-Pin Yeh (tsung-pin.yeh@siemens.com). 
-
-Notes revised/simplified 2/6/2014 by Ryan Pavlik: removed mentions of
-gamepad, and now that there's a VRPN server for the ART tracker running
-on metal-devices, no need to start up one locally.
