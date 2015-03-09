@@ -13,13 +13,13 @@
 			This section is used to set up the Immersive Display page
 			on the Immersive Display Preferences dialog box.
 		--> 
-		<VCD_File name="S:/ISU-TcVis-Config-Files/SW_ISU_METaL.vcd"/>
+		<VCD_File name="C:/ISU-TcVis-Config-Files/SW_ISU_METaL.vcd"/>
 		<Disable_Desktop_View toggle="on"/>
 		<Activate_Tracker toggle="on"/>
 		<!-- Set Fixed_Screen_Display to "off" if you are using a Head Mounted Display. -->
 		<Fixed_Screen_Display toggle="on"/>
-		<!-- Set the default eye separation in inches for immersive view. -->
-		<Immersive_Eye_Separation_Inches value="2.75"/>
+		<!-- Set the default eye separation in inches for immersive view. Default: 2.745 -->
+		<Immersive_Eye_Separation_Inches value="1.77"/>
 	</Immersive_Display>
 	<Cluster>
 		<!-- 
@@ -60,12 +60,12 @@
 			<Rotate_Around_Cursor_Origin toggle="on"/>
 		</Cursor_Mode_3D>
 		<Button_Function_Mapping>
-			<Toggle_Immersive_Menu value="4"/>
+			<Toggle_Immersive_Menu value="1"/>
 			<Decrease_Sensitivity value="6"/>
 			<Increase_Sensitivity value="7"/>
-			<Switch_Mode value="1"/>
-			<Select value="5"/>
-			<Attach_Release value="2"/>
+			<Switch_Mode value="2"/>
+			<Select value="4"/>
+			<Attach_Release value="5"/>
 			<Reset_Up_Vector value="3"/>
 			<Up value="11"/>
 			<Down value="10"/>
@@ -104,7 +104,7 @@
 			This section is used to set the default SCD file
 			in "Concept->Sensors->Configuration".
 		-->
-		<SCD_File name="S:/ISU-TcVis-Config-Files/default.scd"/>
+		<SCD_File name="C:/ISU-TcVis-Config-Files/default.scd"/>
 		<!--
 			The parameter below is used to activate the sensor
 			automatically when activating the immersive display.

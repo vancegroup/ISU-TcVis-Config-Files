@@ -1,0 +1,29 @@
+
+versionNumber 1.0
+initCommand ""
+view Monitor
+{
+  units   meters
+  designEyeOffset 0,0,0
+
+  display monitor
+  {
+    pipe                 ":0.0"
+    border               BORDER_OFF
+    stereo               STEREO_OFF
+
+    channel display_mono
+    {
+      frameBufferGeometry     1280x1024+0+0
+      virtualGeometry         1280x1024-640-512
+      projectorRotation       0
+      viewRotation	   		0.0, 0.0, 0.0
+      physicalDimensions  -0.2625, 0.2625, 0.1475, -0.1475, 0.41
+    }
+  }
+
+}
+
+exitCommand " "
+
+

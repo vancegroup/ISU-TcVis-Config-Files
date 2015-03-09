@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+<!-- 
+	This file is used to configure the Immersive Display Preferences.
+	You can load this file from the "Concept->Immersive Display->Preferences" menu.
+	On the "Configuration tab", click the "Browse" button to load this file.
+	Any time you modify this file, you must click "Reload" to load this file again.
+-->
+
+<Immersive_Display_Configuration version="1">
+	<Immersive_Display>
+		<!-- 
+			This section is used to set up the Immersive Display page
+			on the Immersive Display Preferences dialog box.
+		--> 
+		<VCD_File name="C:/ISU-TcVis-Config-Files/SW_ISU_METaL.vcd"/>
+		<Disable_Desktop_View toggle="on"/>
+		<Activate_Tracker toggle="on"/>
+		<!-- Set Fixed_Screen_Display to "off" if you are using a Head Mounted Display. -->
+		<Fixed_Screen_Display toggle="on"/>
+		<!-- Set the default eye separation in inches for immersive view. Default: 2.745 -->
+		<Immersive_Eye_Separation_Inches value="1.77"/>
+	</Immersive_Display>
+	<Cluster>
+		<!-- 
+			This section is used to set up the Cluster page
+			on the Immersive Display Preferences dialog box.
+		-->
+		<Master_IP name=""/>
+		<Auto_Activate toggle="off"/>
+		<Enable_Gsync toggle=""/>
+	</Cluster>
+	<Controller>
+		<!-- 
+			This section is used to set up the Controller page
+			on the Immersive Display Preferences dialog box.
+		-->
+		<Scale value="1.0"/>
+		<Scale_2D value="0.2"/>
+		<Scale_3D value="0.8"/>
+		<Cursor_2D_Jitter_Tolerance value=""/>
+		<Cursor_Mode_2D toggle="off">
+			<Rotate toggle="off"/>
+			<Pan toggle="off"/>
+			<Zoom toggle="off"/>
+			<Immersive_Fly toggle="off"/>
+			<Immersive_Drive toggle="off"/>
+			<Select toggle="off"/>
+		</Cursor_Mode_2D>
+		<Cursor_Mode_3D toggle="on">
+			<Select toggle="on"/>
+			<Laser_Beam_Select toggle="on"/>
+			<Rotate toggle="on"/>
+			<Pan_and_Zoom toggle="on"/>
+			<Immersive_Fly toggle="on"/>
+			<Immersive_Drive toggle="on"/>
+			<Offset_X value="0.0"/>
+			<Offset_Y value="0.0"/>
+			<Offset_Z value="0.0"/>
+			<Rotate_Around_Cursor_Origin toggle="on"/>
+		</Cursor_Mode_3D>
+		<Button_Function_Mapping>
+			<Toggle_Immersive_Menu value="4"/>
+			<Decrease_Sensitivity value="6"/>
+			<Increase_Sensitivity value="7"/>
+			<Switch_Mode value="1"/>
+			<Select value="5"/>
+			<Attach_Release value="2"/>
+			<Reset_Up_Vector value="3"/>
+			<Up value="11"/>
+			<Down value="10"/>
+			<Right value="9"/>
+			<Left value="8"/>
+		</Button_Function_Mapping>
+	</Controller>
+	<Functions>
+		<!-- 
+			This section is used to set up the Functions page
+			on the Immersive Display Preferences dialog.
+		-->
+		<Pre_Highlight toggle="on"/>
+		<Fixed_Laser_Beam_Length toggle="on"/>
+		<Laser_Beam_Length value="20.0"/>
+		<Navigation>
+			<Translation_Scale value="1.0"/>
+			<Rotation_Scale value="1.0"/>
+		</Navigation>
+	</Functions>
+	<Concept_Menu>
+		<!-- 
+			This section is used to set up the scaling factors
+			of the immersive menu.
+		-->
+		<Scale value="1.0"/>
+		<Scale_2D value="1.0"/>
+		<Scale_3D value="1.0"/>
+		<Display_Channel value=""/>
+		<Rotate_X_Degree value="0.0"/>
+		<Rotate_Y_Degree value="0.0"/>
+		<Rotate_Z_Degree value="0.0"/>
+	</Concept_Menu>
+	<Sensors>
+		<!-- 
+			This section is used to set the default SCD file
+			in "Concept->Sensors->Configuration".
+		-->
+		<SCD_File name="C:/ISU-TcVis-Config-Files/default.scd"/>
+		<!--
+			The parameter below is used to activate the sensor
+			automatically when activating the immersive display.
+			These options are supported:
+				name = "TrackD".
+				name = "InterSense"
+				name = "VRPN"
+		-->
+		<Auto_Activate name="VRPN"/>
+	</Sensors>
+	<Annotations>
+		<!--
+			The parameter below is used to provide the scaling
+			factor of annotations like Markup or Measurement
+			in the immersive display.
+		-->
+		<Scale value="0.2"/>
+	</Annotations>
+	<VRPN>
+		<!--
+			The section is used to set up VRPN parameters.
+			TcVis currently supports:
+				vrpn_Tracker_Remote
+				vrpn_Button_Remote
+				vrpn_Analog_Remote
+
+			Note: If only one server can support tracker, button and analog
+			devices, e.g. zSpace server, you can also use
+
+			<Server name="Tracker0@localhost"/>
+			<Number_Trackers value="2"/> 
+			<Number_Buttons value="3"/>
+			<Number_Analogs value="0"/>
+		-->
+		<Tracker_Server name="DTrack@metal-devices.vrac.iastate.edu">
+			<Number_Trackers value="2"/>
+			<Sensor_ID value="0"/>
+			<Sensor_ID value="1"/>
+		</Tracker_Server>
+		<Button_Server name="WhiteWiimote@metal-devices.vrac.iastate.edu">
+			<Number_Buttons value="12"/>
+		</Button_Server>
+		<Analog_Server name="">
+			<Number_Analogs value="0"/>
+		</Analog_Server>
+	</VRPN>
+	<VisVRController>
+		<!--
+			The section is used to set up VisVRController parameters.
+		-->
+		<Server name="localhost:9999"/>
+		<Number_Trackers value="2"/> 
+		<Number_Buttons value="12"/>
+		<Number_Analogs value="2"/> 
+		<Protocal value="tcp"/>
+	</VisVRController>
+	<Miscellaneous>
+		<Force_2D_Select_Cursor_For_Markup toggle="off"/>
+		<Force_2D_Select_Cursor_For_Measurement toggle="off"/>
+		<Force_2D_Select_Cursor_For_Manipulator toggle="off"/>
+	</Miscellaneous>
+</Immersive_Display_Configuration>
+
